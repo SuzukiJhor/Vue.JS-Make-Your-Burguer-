@@ -9,14 +9,14 @@
             <div class="input-container">
                 <label for="bread">Choose your bread</label>
                 <select name="bread" id="bread" v-model="bread">
-                    <option value="">Choose </option>
+                
                     <option v-for="bread in breads" :key="bread.id" :value="bread.tipo">{{ bread.tipo }}</option>
                 </select>
             </div>
             <div class="input-container">
                 <label for="meat">Choose your Meat</label>
                 <select name="meat" id="meat" v-model="meat">
-                    <option value="">Choose </option>
+                
                     <option v-for="meat in meats" :key="meat.id" :value="meat.tipo">{{ meat.tipo }}</option>
                 </select>
             </div>
@@ -73,7 +73,21 @@ export default {
                 status: "Solicitado"
 
             }
-            console.log(data);
+            const dataJson = JSON.stringify(data);
+            
+            const req = await fetch("http://localhost:3000/burgers", {
+                method: "POST",
+                headers: { "Content-Type": "application/json"},
+                body: dataJson
+            });
+
+            const res = req.json();
+
+            
+            this.name = '';
+            this.bread = '';
+            this.meat = '';
+            this.optionais = '';
         }
     },
     mounted() {
