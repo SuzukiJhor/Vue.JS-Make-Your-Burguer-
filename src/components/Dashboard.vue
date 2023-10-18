@@ -90,8 +90,6 @@ export default {
       })
 
       const res = await req.json();
-
-      console.log(res);
     }
   },
   mounted() {
