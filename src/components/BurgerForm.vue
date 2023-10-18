@@ -1,7 +1,7 @@
 <template>
     <p>Componente de mensagem</p>
     <div>
-        <form id="burger-form">
+        <form id="burger-form" @submit="createBurguer">
             <div class="input-container">
                 <label for="name">Name Client</label>
                 <input type="text" id="name" name="name" v-model="name" placeholder="Digite Seu nome">
@@ -47,6 +47,7 @@ export default {
             optionaisdata: null,
             name: null,
             bread: null,
+            meat: null,
             optionais: [],
             status: 'Solicitado',
             msg: null
@@ -60,8 +61,19 @@ export default {
             this.breads = data.paes;
             this.meats = data.carnes;
             this.optionaisdata = data.opcionais;
+        },
+        async createBurguer(e) {
+            e.preventDefault();
 
+            const data = {
+                name: this.name,
+                bread: this.bread,
+                meat: this.meat,
+                optionais: Array.from(this.optionais),
+                status: "Solicitado"
 
+            }
+            console.log(data);
         }
     },
     mounted() {
