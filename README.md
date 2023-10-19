@@ -1,21 +1,17 @@
 # vue-make-your-burguer
 
-## Project setup
+## Setup do projeto.
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compila e recarrega a quente para desenvolvimento
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
+### Execute and raise the json server
 ```
-npm run build
+npm run backend
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 <img width="500" alt="makeyourburger" src="https://github.com/SuzukiJhor/Vue.JS-Make-Your-Burguer-/assets/95131108/c7ce5815-d5b7-455d-8fd6-4052ce4204d5">
